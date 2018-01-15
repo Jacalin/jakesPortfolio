@@ -1,3 +1,16 @@
-body{
-  background-color: $main;
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: $ff-s;
+}
+
+body {
+  background: linear-gradient(45deg,$color3, $color3 30%,$color3 30%, $color2 70%, $color2 70%);
+}
+
+h1 {
+  color: $fc1;
 }

@@ -1,0 +1,49 @@
+header {
+  background-color: $color1;
+  padding: 1em .5em;
+  position: relative;
+  a,h1 {
+    color: $fc2;
+  }
+  &::after{
+    content:" ";
+    clear:both;
+    display:block;
+  }
+  h1{
+    font-weight: $fw-b;
+  }
+}
+
+.logo{
+  float:left;
+  font-size: 1rem;
+  margin:0;
+  text-transform: uppercase;
+  span{
+    font-weight: $fw-l;
+;
+  }
+}
+
+.site-nav{
+  position: absolute;
+  top:100%;
+  right:0;
+  ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+  }
+  li{
+
+  }
+
+  a{
+    text-decoration: none;
+    padding: 2em 6em;
+    display: block;
+    background-color: $color1;
+  }
+
+}

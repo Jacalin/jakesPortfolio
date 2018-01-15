@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin  = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -8,7 +9,9 @@ var extractPlugin = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: {
+    main: './src/js/main.js'
+  },
   output: {
     path: path.resolve(__dirname,'dist'), // resolve method gives absolute path
     filename: 'bundle.js',
@@ -34,8 +37,12 @@ module.exports = {
         })
       },
       {
-        test:/\.html$/,
-        use:['html-loader']
+        test:/\.ejs$/,
+        use: [
+          {
+            loader: 'ejs-compiled-loader'
+          }
+        ]
       },
       {
         test:/\.(jpg|png)$/,
@@ -49,13 +56,23 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    }),
     extractPlugin,
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      filename: 'index.html',
+      template: 'src/pages/index.ejs',
+      chunks:['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/pages/about.ejs',
+      chunks:['main']
     }),
     new CleanWebpackPlugin(['dist'])
   ]

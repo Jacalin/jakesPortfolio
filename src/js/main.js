@@ -1,3 +1,8 @@
+import 'jquery';
 import '../scss/main.scss';
 
-console.log("hello");
+$(function(){
+  $("#btn").click(function(){
+    $(".angle").toggleClass("angle2");
+    })
+})

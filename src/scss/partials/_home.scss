@@ -1,0 +1,92 @@
+.angle {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background-color:$color4;
+  z-index: -1;
+  transform: translateX(20%) rotate(45deg);
+  transition: all 2s ease;
+}
+.angle2 {
+  transform: translateX(0%) rotate(0deg);
+}
+
+#main {
+  height: 90%;
+  width: 90%;
+  background-color: $color4;
+  box-shadow: 0 0 15px rgba(0,0,0,.20);
+  border-radius: 3px;
+  margin: 10;
+  position: absolute;
+  transform: translate3d(-50%,-50%,0);
+  top: 50%;
+  left: 50%;
+  background-clip: content-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #welcome {
+//   background-image:linear-gradient(135deg,$color1 25%,$color4 25%,$color4 75%,$color4 75%);
+//   height: 100vh;
+//   .welcome-content{
+//     position: absolute;
+//     width: 50%;
+//     background-color: $color5;
+//     left:50%;
+//     top:50%;
+//     transform: translate(-50%,-50%);
+//     box-shadow: -15px 15px rgba($color3,.8),15px 30px rgba($color2,.6);
+//     &:after{
+//       content: " ";
+//       display: block;
+//       padding-bottom: 50%;
+//     }
+//     h1,p{
+//       text-align: center;
+//       padding: 10px;
+//     }
+//   }
+//
+// }
