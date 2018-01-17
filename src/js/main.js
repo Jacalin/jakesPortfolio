@@ -1,8 +1,13 @@
 import 'jquery';
+import './mobile-nav';
+import './page-switch';
 import '../scss/main.scss';
 
 $(function(){
-  $("#btn").click(function(){
+
+  $("#home-btn").click(function(){
+
     $(".angle").toggleClass("angle2");
+
     })
 })
