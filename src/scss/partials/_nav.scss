@@ -1,5 +1,5 @@
 header {
-  background-color: $color1;
+  background-color: $color5;
   padding: 1em .5em;
   position: relative;
   a,h1 {
@@ -16,6 +16,7 @@ header {
 }
 
 .logo{
+  color: $color1;
   float:left;
   font-size: 1.5rem;
   padding-left: 5px;
@@ -42,7 +43,7 @@ header {
     padding:0;
   }
   li{
-    border-bottom: 1px solid $fc2;
+    border-bottom: 1px solid $color4;
     &:last-child{
       border-bottom: none;
     }
@@ -52,11 +53,13 @@ header {
     text-decoration: none;
     padding: 2em 6em;
     display: block;
-    background-color: $color3;
+    color: $color1;
+    background-color: $color5;
     text-transform: uppercase;
     &:hover,
     &:focus{
-      background: $color2;
+      background: $color1;
+      color: $color5;
     }
   }
 }
@@ -79,7 +82,7 @@ header {
      height: 3px;
      width: 1.75em;
      border-radius: 3px;
-     background: #E9B000;
+     background: $color4;
      transition: all ease-in-out 500ms;
   }
   &::before{

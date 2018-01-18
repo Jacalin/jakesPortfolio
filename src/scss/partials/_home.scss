@@ -27,7 +27,7 @@
 
 }
 
-#main::-webkit-scrollbar {
+#content::-webkit-scrollbar {
     display: none;
 }
 
@@ -42,25 +42,60 @@
   overflow-y: auto;
   .left{
     color: $fc1;
-    font-size: 1.5vh;
+    font-size: 1em;
     padding: 5px;
     display: grid;
-    background-color: #E9B000;
-    //background-size: cover;
+    // grid-template-columns: 1fr 1fr;
+    background-color: $color1;
+    //border: 20px solid $color5;
+    //box-shadow: 20px 10px 10px rgba(0,0,0,.50);
     align-content: center;
     justify-content: center;
     text-align: center;
     grid-row: 1/3;
+    h1, h2{
+      font-size: 7vmin;
+      display: inline-block;
+      color: $color5;
+    }
     span{
-      font-weight: $fw-l;
+      color: $color6;
+    }
+    #typed{
+      white-space: pre;
+      &:after {
+        visibility: visible;
+        content: '';
+        background-color: #d4f8e3;
+        display: inline-block;
+        position: relative;
+        width: 0.2em;
+        height: 5vmin;
+        margin-left: 5px;
+        box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
+        animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite, blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0% { opacity:1; }
+      50% { opacity:0; }
+      100% { opacity:1; }
+      }
+
     }
   }
   .right{
+    display: grid;
+    justify-content: center;
     align-self: center;
+    h1{
+      text-align: center;
+      font-size: 7vmin;
+      color: $color1;
+    }
   }
 
   .hire-btn{
-    margin: 0 auto;
+    margin: 1em auto;
     text-decoration: none;
     padding: 1em 2em;
     font-size: 18px;
@@ -69,9 +104,24 @@
     color: $fc1;
     border-radius: 3px;
     &:hover{
-      background-color: $color2;
+      background-color: $color6;
       color: $fc2;
     }
+  }
+
+    .port-btn{
+      margin: 1em auto;
+      text-decoration: none;
+      padding: 1em 2em;
+      font-size: 18px;
+      letter-spacing: .1em;
+      background-color: $color6;
+      color: $fc1;
+      border-radius: 3px;
+      &:hover{
+        background-color: $color1;
+        color: $fc2;
+      }
 
   }
 
@@ -80,6 +130,7 @@
 @media screen and (max-width: 425px) {
     #content{
       grid-template-columns: 1fr;
+      grid-template-rows: auto;
     }
     .site-nav--open,
     .site-nav {

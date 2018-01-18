@@ -1,6 +1,8 @@
 import 'jquery';
+import Typed from 'typed.js';
 import './mobile-nav';
 import './page-switch';
+import './typer';
 import '../scss/main.scss';
 
 $(function(){
@@ -9,5 +11,5 @@ $(function(){
 
     $(".angle").toggleClass("angle2");
 
-    })
+  })
 })
