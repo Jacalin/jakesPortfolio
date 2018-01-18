@@ -19,11 +19,12 @@
   box-shadow: 0 0 15px rgba(0,0,0,.20);
   border-radius: 3px;
   position: absolute;
+
   transform: translate3d(-50%,-50%,0);
   top: 50%;
   left: 50%;
   background-clip: content-box;
-  overflow-y: auto;
+
 }
 
 #main::-webkit-scrollbar {
@@ -33,13 +34,16 @@
 
 #content {
   display: grid;
-  grid-template-rows: repeat(2,1fr);
-  grid-template-columns: repeat(2,1fr);
+  //grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   overflow: hidden;
   height: calc(100% - 59px);  //background-size: 100%;
+  overflow-y: auto;
   .left{
-
     color: $fc1;
+    font-size: 1.5vh;
+    padding: 5px;
     display: grid;
     background-color: #E9B000;
     //background-size: cover;
@@ -52,5 +56,35 @@
     }
   }
   .right{
+    align-self: center;
   }
+
+  .hire-btn{
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 1em 2em;
+    font-size: 18px;
+    letter-spacing: .1em;
+    background-color: $color4;
+    color: $fc1;
+    border-radius: 3px;
+    &:hover{
+      background-color: $color2;
+      color: $fc2;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+    #content{
+      grid-template-columns: 1fr;
+    }
+    .site-nav--open,
+    .site-nav {
+    width: 100%;
+    text-align: center;
+  }
+
 }

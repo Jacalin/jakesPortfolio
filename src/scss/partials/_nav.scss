@@ -43,6 +43,9 @@ header {
   }
   li{
     border-bottom: 1px solid $fc2;
+    &:last-child{
+      border-bottom: none;
+    }
   }
 
   a{
