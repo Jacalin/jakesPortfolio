@@ -9,6 +9,5 @@ $(document).ready(function(){
     var page = $(this).attr('href');
     $('body').load('/'+ page + '.html');
     return false;
-
   });
 })

@@ -2,6 +2,7 @@ header {
   background-color: $color5;
   padding: 1em .5em;
   position: relative;
+  z-index: 50;
   a,h1 {
     color: $fc2;
   }
