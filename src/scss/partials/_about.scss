@@ -63,3 +63,14 @@
 
   }
 }
+
+@media screen and (max-width: 425px) {
+    #about-content{
+      .about-text{
+        padding: 0 10px;
+      p{
+        padding: 0px 25px;
+      }
+    }
+  }
+}

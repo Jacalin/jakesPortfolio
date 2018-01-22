@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname,'dist'), // resolve method gives absolute path
     filename: 'bundle.js',
-    //publicPath:'/dist' // specifies where assets are to be found, by default it's just /
+    //publicPath:'/jakesPortfolio/' // specifies where assets are to be found, by default it's just /
   },
   module: {
     rules: [
@@ -72,6 +72,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'about.html',
       template: 'src/pages/about.ejs',
+      chunks:['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'portfolio.html',
+      template: 'src/pages/portfolio.ejs',
       chunks:['main']
     }),
     new CleanWebpackPlugin(['dist'])
