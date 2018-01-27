@@ -10,12 +10,18 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    main: './src/js/main.js'
+    home: './src/js/main.js',
+    about:'./src/js/about.js',
+    portfolio:'./src/js/portfolio.js'
   },
   output: {
     path: path.resolve(__dirname,'dist'), // resolve method gives absolute path
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     //publicPath:'/jakesPortfolio/' // specifies where assets are to be found, by default it's just /
+  },
+  devServer: {
+    // inline:true,
+    port: 8000
   },
   module: {
     rules: [
@@ -33,16 +39,12 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractPlugin.extract({
-          use:['css-loader','sass-loader']
+          use:['css-loader','postcss-loader','sass-loader']
         })
       },
       {
-        test:/\.ejs$/,
-        use: [
-          {
-            loader: 'ejs-compiled-loader'
-          }
-        ]
+        test:/\.html$/,
+        use:['html-loader']
       },
       {
         test:/\.(jpg|png)$/,
@@ -52,7 +54,7 @@ module.exports = {
             options: {
               name:'[name].[ext]', //by default file name will be randomly assigned
               outputPath:'img/', // by default it would be inside the dist
-              publicPath:'/'
+              //publicPath:'img/'
             }
           }
         ]
@@ -66,18 +68,18 @@ module.exports = {
     extractPlugin,
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'src/pages/index.ejs',
-      chunks:['main']
+      template: 'src/index.html',
+      chunks:['home']
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
-      template: 'src/pages/about.ejs',
-      chunks:['main']
+      template: 'src/about.html',
+      chunks:['about']
     }),
     new HtmlWebpackPlugin({
       filename: 'portfolio.html',
-      template: 'src/pages/portfolio.ejs',
-      chunks:['main']
+      template: 'src/portfolio.html',
+      chunks:['portfolio']
     }),
     new CleanWebpackPlugin(['dist'])
   ]

@@ -1,7 +1,6 @@
 import 'jquery';
 import './mobile-nav';
 import './page-switch';
-import './typer';
 import '../scss/main.scss';
 
 import '../img/img-1.png';
