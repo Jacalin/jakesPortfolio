@@ -25,7 +25,7 @@ $(document).ready(function(){
     currentImg.src = e.target.src;
     currentHref.href = e.target.alt;
     currentImg.className = e.target.className;
-    //console.log(currentImg.className);
+    console.log(currentImg.className);
     txts.forEach(txt => {
       if(currentImg.className === txt.id){
         $(txts).removeClass('active');
